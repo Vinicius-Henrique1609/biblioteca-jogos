@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca de Jogos</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        if (localStorage.getItem("tema") === "dark") {
+            document.documentElement.classList.add("dark-mode");
+        }
+    </script>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="logo-titulo">
+            <img src="bibiloteca.jpeg" alt="Biblioteca" class="logo">
+            <h1>Biblioteca de Jogos</h1>
+        </div>
+
+        <button id="btnAcessibilidade" class="btn">
+            <span class="material-icons" id="iconeModo">dark_mode</span>
+        </button>
+    </header>
+
+    <div class="container">
+
+        <div class="filtros">
+            <label>Pesquisar:
+                <input type="text" id="pesquisaInput" onkeyup="pesquisarJogo()">
+            </label>
+
+            <label>Filtrar por Categoria:
+                <select id="filtroCategoria" onchange="filtrarCategoria()">
+                    <option value="">Todas</option>
+                    <option value="tiro">Tiro</option>
+                    <option value="corrida">Corrida</option>
+                    <option value="historia">História</option>
+                    <option value="rpg">RPG</option>
+                    <option value="simulador">Simulador</option>
+                    <option value="terror">Terror</option>
+                </select>
+            </label>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Empresa</th>
+                    <th>Categoria</th>
+                </tr>
+            </thead>
+            <tbody id="tabelaJogos"></tbody>
+        </table>
+
+    </div>
+
+    <a href="login.html" class="btn-admin" target="_blank">Administrador</a>
+    <footer>
+        <a href="https://vinicius-henrique1609.github.io/wolves-projeto-FrontEnd/" target="_blank">Projeto 1</a> |
+        <a href="https://github.com/Vinicius-Henrique1609/wolves-projeto-FrontEnd" target="_blank">GitHub - Projeto
+            1</a> |
+        <a href="https://github.com/Vinicius-Henrique1609/biblioteca-jogos" target="_blank">GitHub - Projeto 2</a>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

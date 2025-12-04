@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login Admin</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        if (localStorage.getItem("tema") === "dark") {
+            document.documentElement.classList.add("dark-mode");
+        }
+    </script>
+</head>
+
+<body>
+<div class="container login-box">
+    <h2>Login Administrador</h2>
+
+    <label>Usuário:
+        <input type="text" id="user" placeholder="admin">
+    </label>
+
+    <label>Senha:
+        <input type="password" id="pass" placeholder="123">
+    </label>
+
+    <button class="btn" onclick="login()">Entrar</button>
+</div>
+
+<script src="login.js"></script>
+
+</body>
+</html>

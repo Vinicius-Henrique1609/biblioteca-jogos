@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        if (localStorage.getItem("adm_logado") !== "true") {
+            window.location.href = "login.html";
+        }
+
+        if (localStorage.getItem("tema") === "dark") {
+            document.documentElement.classList.add("dark-mode");
+        }
+    </script>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Painel Administrador</h2>
+
+    <label>Nome do Jogo:
+        <input type="text" id="nomeJogo">
+    </label>
+
+    <label>Empresa:
+        <input type="text" id="empresa">
+    </label>
+
+    <label>Categoria:
+        <select id="categoria">
+            <option value="">Selecione</option>
+            <option value="tiro">Tiro</option>
+            <option value="corrida">Corrida</option>
+            <option value="historia">História</option>
+            <option value="rpg">RPG</option>
+            <option value="simulador">Simulador</option>
+            <option value="terror">Terror</option>
+        </select>
+    </label>
+
+    <button class="btn" onclick="cadastrarJogo()">Cadastrar</button>
+
+    <h3>Gerenciar Jogos</h3>
+
+    <button class="btn" onclick="excluirSelecionados()">Excluir Selecionados</button>
+    <button class="btn" onclick="excluirTodos()">Excluir Todos</button>
+
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th>Nome</th>
+                <th>Empresa</th>
+                <th>Categoria</th>
+            </tr>
+        </thead>
+        <tbody id="tabelaJogos"></tbody>
+    </table>
+</div>
+
+<script src="admin.js"></script>
+
+</body>
+</html>
